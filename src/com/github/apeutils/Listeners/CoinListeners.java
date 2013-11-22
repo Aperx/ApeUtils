@@ -14,7 +14,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import com.github.apeutils.ApeUtils;
+import com.github.apeutils.Config.MyConfigManager;
+
 public class CoinListeners implements Listener{
+	MyConfigManager manager = new MyConfigManager(ApeUtils.getInstance());
 	
 	public void GiveCoinCounter(PlayerJoinEvent event){
         Player p = event.getPlayer();

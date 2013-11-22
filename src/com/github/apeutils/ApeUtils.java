@@ -18,6 +18,8 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
 import com.github.apeutils.Commands.CommandTornado;
+import com.github.apeutils.Config.MyConfig;
+import com.github.apeutils.Config.MyConfigManager;
 import com.github.apeutils.Effects.Ghosts;
 import com.github.apeutils.Listeners.CoinListeners;
 import com.github.apeutils.Listeners.CoinShopListeners;
@@ -25,6 +27,10 @@ import com.github.apeutils.Listeners.CoinShopListeners;
 
 public class ApeUtils extends JavaPlugin{
 	private static ApeUtils instance;
+	
+	//Configs
+	MyConfigManager manager;
+	MyConfig CoinsConfig;
 	
 	//Listeners
 	public final Ghosts G = new Ghosts();
@@ -51,6 +57,13 @@ public class ApeUtils extends JavaPlugin{
 	this.setInstance(this);
 	
 	PluginManager pm = getServer().getPluginManager();
+	
+	//Configs
+	manager = new MyConfigManager(this);
+	CoinsConfig = manager.getNewConfig("coins.yml", new String[] {
+			"Player Coins",
+			"Apart of ApeUtils"			
+	});
 	
 	//Registered Events
 	
@@ -89,6 +102,8 @@ public class ApeUtils extends JavaPlugin{
 	this.OPboard = board;
 	//End OP Board
 	
+	saveConfig();
+	CoinsConfig.saveConfig();
 	}
 	//End of onEnable
 	
