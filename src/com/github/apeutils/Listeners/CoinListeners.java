@@ -6,7 +6,10 @@ import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -34,5 +37,27 @@ public class CoinListeners implements Listener{
         p.getInventory().addItem(Coin);
         }
 	}
+	
+	public void StopChuck (PlayerDropItemEvent event){
+		//Stops the chucking of Gold nuggets from player inventories
+		if(event.getItemDrop().equals(Material.GOLD_NUGGET)){
+			event.setCancelled(true);
+		}
+	}
 
+
+	public void StopPickup (PlayerPickupItemEvent event){
+		//Stops picking up of Gold nuggets from floor
+		if(event.getItem().equals(Material.GOLD_NUGGET)){
+			event.setCancelled(true);
+		}
+	}
+	
+	public void StopMove (InventoryClickEvent event){
+		//Stops movement of golden nugget
+		if(event.getCurrentItem().equals(Material.GOLD_NUGGET)){
+			event.setCancelled(true);
+		}
+	}
+	
 }

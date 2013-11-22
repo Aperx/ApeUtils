@@ -20,6 +20,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import com.github.apeutils.Commands.CommandTornado;
 import com.github.apeutils.Effects.Ghosts;
 import com.github.apeutils.Listeners.CoinListeners;
+import com.github.apeutils.Listeners.CoinShopListeners;
 
 
 public class ApeUtils extends JavaPlugin{
@@ -28,6 +29,7 @@ public class ApeUtils extends JavaPlugin{
 	//Listeners
 	public final Ghosts G = new Ghosts();
 	public final CoinListeners CL = new CoinListeners();
+	public final CoinShopListeners CSL = new CoinShopListeners();
 	
 	//Scoreboards
 	
@@ -54,6 +56,7 @@ public class ApeUtils extends JavaPlugin{
 	
 	pm.registerEvents(G, this);
 	pm.registerEvents(CL, this);
+	pm.registerEvents(CSL, this);
 	
 	//End of Registering Events
 	
