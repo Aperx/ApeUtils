@@ -3,6 +3,7 @@ package com.github.apeutils.Listeners;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -35,6 +36,7 @@ public class CoinListeners implements Listener{
         List<String> lore = new ArrayList<String>();
         lore.add("Click to Open Coin Shop");
         i.setLore(lore);
+        i.setDisplayName(ChatColor.GOLD+"Coin");
         
         if (!inventory.contains(Coin)) {         
         //If player does not have 'Coin' Add item to Players Inventory

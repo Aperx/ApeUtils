@@ -113,6 +113,7 @@ public class ApeUtils extends JavaPlugin{
 	//Start of onDisable
 	public void onDisable(){
 		saveConfig();
+		CoinsConfig.saveConfig();
 	}
 	//End of onDisable
 	

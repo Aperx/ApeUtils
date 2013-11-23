@@ -20,7 +20,7 @@ public class CommandTornado implements CommandExecutor {
         {
         p.sendMessage(ChatColor.RED+"You do not have permission");
         }
-        Tornado.spawnTornado(ApeUtils.getInstance(), p.getLocation(), Material.WOOL,(byte) 0, null, 0.06, 200, 300, true);
+        Tornado.spawnTornado(ApeUtils.getInstance(), p.getLocation(), Material.WEB,(byte) 0, null, 0.06, 200, 300, true);
 		return false;
 	
 	}

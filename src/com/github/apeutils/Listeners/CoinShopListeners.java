@@ -1,5 +1,6 @@
 package com.github.apeutils.Listeners;
 
+import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -34,7 +35,8 @@ public class CoinShopListeners implements Listener {
 		
 		if(event.getAction() == Action.LEFT_CLICK_BLOCK){
 			if(event.getClickedBlock().equals(Material.GOLD_NUGGET)){
-				player.openInventory(CoinShop.CoinShop);			
+				player.openInventory(CoinShop.CoinShop);
+				player.getWorld().playEffect(player.getLocation(), Effect.SMOKE, 20);
 			}
 		}
 	}
